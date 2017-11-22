@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>calculator.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,128); font-weight: bold; }
+.s3 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+calculator.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">import </span><span class="s1">re 
+ 
+print(</span><span class="s2">&quot;Our Magical Calculator&quot;</span><span class="s1">) 
+print(</span><span class="s2">&quot;Type 'quit' to exit</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">) 
+ 
+previous = </span><span class="s3">0</span><span class="s1"> 
+run = </span><span class="s0">True</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">def </span><span class="s1">performMath(): 
+    </span><span class="s0">global </span><span class="s1">run 
+    </span><span class="s0">global </span><span class="s1">previous 
+    equation= </span><span class="s2">&quot;&quot;</span><span class="s1"> 
+    </span><span class="s0">if </span><span class="s1">previous == </span><span class="s3">0</span><span class="s1">: 
+        equation = input(</span><span class="s2">&quot;Enter equation:&quot;</span><span class="s1">) 
+    </span><span class="s0">else</span><span class="s1">: 
+        equation = input(str(previous)) 
+ 
+    </span><span class="s0">if </span><span class="s1">equation == </span><span class="s2">'quit'</span><span class="s1">: 
+        print(</span><span class="s2">&quot;Bye Bye&quot;</span><span class="s1">) 
+        run = </span><span class="s0">False</span><span class="s1"> 
+    </span><span class="s0">else</span><span class="s1">: 
+        equation = re.sub(</span><span class="s2">'[a-zA-Z,:()&quot; &quot;]'</span><span class="s1">, </span><span class="s2">''</span><span class="s1">, equation) 
+ 
+        </span><span class="s0">if </span><span class="s1">previous == </span><span class="s3">0</span><span class="s1">: 
+            previous = eval(equation) 
+        </span><span class="s0">else</span><span class="s1">: 
+            previous = eval(str(previous) + equation) 
+ 
+ 
+ 
+</span><span class="s0">while </span><span class="s1">run: 
+    performMath()</span></pre>
+</body>
+</html>

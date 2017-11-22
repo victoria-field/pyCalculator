@@ -1,0 +1,309 @@
+PEP is the python style guide
+    drop down two lines
+    use snake case my_function
+Types
+numbers
+python will add numbers
+2+2
+4
+
+will add strings
+"2"+"2"
+'22'
+
+numbers can also be added as
+int("5")+ int("7")
+12
+
+int will try to add anything that is int("") as a number
+
+strings
+"Dont't do that"
+'She said "I want this"'
+'She said "Don\'t do that"'
+
+string manipulation
+"Hello, " + "nick"
+"This costs " + 6 + "bucks" will not work
+"This costs " + str(6)+ " Dollars" will work
+"This costs " + str(6 + 5)+ " Dollars"
+"Hello:Nick".split(":")
+    ['Hello', 'Nick']
+"My name is " + "hello:Nick:world".split(":")[1]
+    "my name is Nick"
+    split takes the string into an array and then index [1] is called and printed only
+
+    Booleans
+    True and False
+    "This" is "This"
+        True
+    "This" == "This"
+        True
+
+    array = lists = []
+
+    print("I like " + ["movies", "games", "python"][0])
+        I like movies
+
+    objects = dictionaries
+        dont wrap {} in code blocks only in dictionaries
+           IN[2]: {"name": "Nick", "age": 27, "hobby": "code"}['name']
+                Out[2]: 'Nick'
+
+Variables
+    greeting = "Hello World"
+    greeting = "Hello World"
+        greeting + "Victoria"
+        Out[5]: 'Hello WorldVictoria'
+        greeting + " Victoria"
+        Out[6]: 'Hello World Victoria'
+        greeting = greeting.split(" ")[0]
+        greeting + "Victoria"
+        Out[8]: 'HelloVictoria'
+
+
+
+built-in functions
+    In[2]: print("hi")
+hi
+In[3]: str(5)
+Out[3]: '5'
+In[4]: str(5.5)
+Out[4]: '5.5'
+In[5]: str(True)
+Out[5]: 'True'
+In[6]: int(5)
+Out[6]: 5
+In[7]: float("5.5")
+Out[7]: 5.5
+In[8]: bool("True")
+Out[8]: True
+In[9]: len("Hello")
+Out[9]: 5
+In[10]: len([1, 2, 5, 8, 7])
+Out[10]: 5
+In[11]: len("Hello", "Nick")
+Traceback (most recent call last):
+  File "C:\Users\victoria\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py", line 2862, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-11-179f00b34fab>", line 1, in <module>
+    len("Hello", "Nick")
+TypeError: len() takes exactly one argument (2 given)
+In[12]: len(["Hello", "Nick"])
+Out[12]: 2
+In[13]: sorted([16, 3, 8, 6, 9, 133, 435, 21, 823, 45])
+Out[13]: [3, 6, 8, 9, 16, 21, 45, 133, 435, 823]
+In[14]: sort(["B", "R", "C"])
+Traceback (most recent call last):
+  File "C:\Users\victoria\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py", line 2862, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-14-8ac6ada777c0>", line 1, in <module>
+    sort(["B", "R", "C"])
+NameError: name 'sort' is not defined
+In[15]: sorted(["B", "R", "C"])
+Out[15]: ['B', 'C', 'R']
+In[16]: sorted(["B", "R", "C", "a"])
+Out[16]: ['B', 'C', 'R', 'a']
+In[17]: sorted(["B", "R", "C", "a", "5", "3.5"])
+Out[17]: ['3.5', '5', 'B', 'C', 'R', 'a']
+In[18]: sorted(["B", "R", "C", "a", "5", "13.5"])
+Out[18]: ['13.5', '5', 'B', 'C', 'R', 'a']
+
+functions
+    //define a function ":" starts indentation code
+def my_function():
+    print("This is my first function!")
+    print("This is a second string.")
+
+//call the function
+my_function()
+
+//passsing in arguments
+def my_function(str1, str2):
+    print(str1)
+    print(str2)
+
+
+my_function("hi", "bye")
+my_function("Hello", "World")
+
+
+
+def print_something(name, age):
+    print("my name is " + name + " and my age is " + str(age))
+
+print_something("Nick", 27)
+
+def print_something_else(name, age):
+    print("my name is", name, "and my age is", age)
+
+print_something_else("Nick", 27)
+
+
+def print_something_else1(name = "victoria", age = 21):
+    print("my name is", name, "and my age is", age)
+
+print_something_else1("Nick")
+
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+my name is Nick and my age is 27
+my name is Nick and my age is 27
+my name is Nick and my age is 21
+
+Process finished with exit code 0
+
+def print_something_else1(name = "victoria", age = 21):
+    print("my name is", name, "and my age is", age)
+
+print_something_else1(age = 27, name="bill")
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+my name is bill and my age is 27
+
+Process finished with exit code 0
+
+
+infinite number of arguments
+
+def print_people(*people):
+    for person in people:
+        print("This person is", person)
+
+print_people("Nick", "Jack", "Dianne", "Melvin", "Doug")
+
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+This person is Nick
+This person is Jack
+This person is Dianne
+This person is Melvin
+This person is Doug
+
+Process finished with exit code 0
+
+
+def do_math(num1, num2):
+    return num1 + num2
+
+math1 = do_math(5, 7)
+math2 = do_math(11, 14)
+
+print("first sum is", math1, "and the second sum is ", math2)
+
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+first sum is 12 and the second sum is  25
+
+Process finished with exit code 0
+
+
+if else
+check = "yo"
+
+if check == False:
+    print("It is false")
+elif check == " hamburger":
+    print("yummy")
+elif check == "yo":
+    print("Hi")
+else:
+    print("It is actually equal to true")
+
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+Hi
+
+Process finished with exit code 0
+
+for while loop
+
+numbers = [1, 2, 3, 4, 5]
+
+for item in numbers:
+    print(item)
+
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+1
+2
+3
+4
+5
+
+Process finished with exit code 0
+
+numbers = [1, 2, 3, 4, 5]
+
+for item in numbers:
+    print("the number is", item)
+
+C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+the number is 1
+the number is 2
+the number is 3
+the number is 4
+the number is 5
+
+Process finished with exit code 0
+
+run = True
+current = 1
+
+while run:
+    if current == 100:
+        run = False
+    else:
+        print(current)
+        current += 1
+
+ C:\Users\victoria\Anaconda3\python.exe C:/Users/victoria/PycharmProjects/untitled/main.py
+1
+2
+3
+4
+5
+6...
+99
+Process finished with exit code 0
+
+importing libraries
+regex
+    regular expression
+
+    >>> import re
+>>> string = "'I am not yelling', she said. Though we knew it not to be true"
+>>> print(string)
+'I am not yelling', she said. Though we knew it not to be true
+>>> new = re.sub('[A-Z]', '', string)
+>>> print(new)
+' am not yelling', she said. hough we knew it not to be true
+>>> new = re.sub('[a-z]', '', string)
+>>> print(new)
+'I   ',  . T
+>>> new = re.sub('.,\'A-Z]', '', string)
+>>> print(new)
+'I am not yelling', she said. Though we knew it not to be true
+>>> new = re.sub('.,\']', '', string)
+>>> print(new)
+'I am not yelling', she said. Though we knew it not to be true
+>>> new = re.sub('[.,\']', '', string)
+>>> print(new)
+I am not yelling she said Though we knew it not to be true
+>>> new = re.sub('[a-z]', '[A-Z]', string)
+>>> print(new)
+'I [A-Z][A-Z] [A-Z][A-Z][A-Z] [A-Z][A-Z][A-Z][A-Z][A-Z][A-Z][A-Z]', [A-Z][A-Z][A-Z] [A-Z][A-Z][A-Z][A-Z]. T[A-Z][A-Z][A-Z][A-Z][A-Z] [A-Z][A-Z] [A-Z][A-Z][A-Z][A-Z] [A-Z][A-Z] [A-Z][A-Z][A-Z] [A-Z][A-Z] [A-Z][A-Z] [A-Z][A-Z][A-Z][A-Z]
+>>> string = string + "6 298 - 345"
+>>> print(string)
+'I am not yelling', she said. Though we knew it not to be true6 298 - 345
+>>> new = re.sub("[^0-9]', '', string)
+  File "<stdin>", line 1
+    new = re.sub("[^0-9]', '', string)
+                                     ^
+SyntaxError: EOL while scanning string literal
+>>> new = re.sub('[^0-9]', '', string)
+>>> print(new)
+6298345
+
+
+
+
+
+
+
+
+
